@@ -1,0 +1,565 @@
+<div>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="http://placehold.it/500x200" alt="..." />
+                <div class="carousel-caption">This is caption</div>
+            </div>
+            <div class="item">
+                <img src="http://placehold.it/500x201" alt="..." />
+                <div class="carousel-caption">This is caption</div>
+            </div>
+        </div> <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+     <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="content-div">Content DIV</div>
+</div>
+
+<div class="slide-wrapper">
+
+   <div id="homepage-feature" class="carousel slide">
+      <ol class="carousel-indicators">
+         <li data-target="#homepage-feature" data-slide-to="0" class="active"></li>
+         <li data-target="#homepage-feature" data-slide-to="1"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+         <div class="item active" style="background-image:url(http://lorempixel.com/1500/600/abstract)">
+            <div class="carousel-caption">
+               <h1>Changes to the Grid</h1>
+               <p>Bootstrap 3 still features a 12-column grid, but many of the CSS class names have completely changed.</p>
+               <p><a class="btn btn-large btn-primary" href="#">Learn more</a>
+               </p>
+            </div>
+         </div>
+
+         <div class="item" style="background-image:url(http://placehold.it/1500x600)">
+            <div class="carousel-caption">
+               <h1>Percentage-based sizing</h1>
+               <p>With "mobile-first" there is now only one percentage-based grid.</p>
+               <p><a class="btn btn-large btn-primary" href="#">Browse gallery</a>
+               </p>
+            </div>
+         </div>
+
+      </div>
+      <!-- /.carousel-inner -->
+      <!-- Controls -->
+      <a class="left carousel-control" href="#homepage-feature" data-slide="prev">
+        <span class="fa fa-angle-left"></span>
+      </a>
+      <a class="right carousel-control" href="#homepage-feature" data-slide="next">
+        <span class="fa fa-angle-right"></span>
+      </a>
+   </div>
+   <!-- /#homepage-feature.carousel -->
+   <div class="red">
+
+     <div class="red-content">
+        Content goes here.
+
+     </div>
+
+
+   </div>
+
+</div>
+<!-- /.container.slide-wrapper -->
+
+
+
+//featured
+<template>
+
+      <section>
+        <div class="columns bg-img">
+          <div class="column is-1">
+
+          </div>
+          <div class="column is-10 is-centered">
+            <b-carousel-list v-model="test" :data="items" :items-to-show="2">
+                <template slot="item" slot-scope="props">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-5by4">
+                                <a @click="info(props.index)"><img :src="props.list.image"></a>
+                            </figure>
+                            <b-tag type="is-twitter" rounded style="position: absolute; top: 0;"><b>Days To</b></b-tag>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <div class="columns is-centered">
+                                  <p class="title is-6">{{ props.list.title }} Event Name</p>
+                                </div>
+                                <div class="columns is-centered">
+                                  <div class="column is-3">
+                                    <b-button size="is-small" type="is-light"><i class="fas fa-map-marker"></i> Venue</b-button>
+                                  </div>
+                                  <div class="column is-3">
+                                    <b-button size="is-small" type="is-light"><i class="fas fa-calendar"></i> Date</b-button>
+                                  </div>
+                                  <div class="column is-3">
+                                    <b-button size="is-small" type="is-light"><i class="fas fa-clock"></i> Time</b-button>
+                                  </div>
+                                </div>
+                                <div class="field is-grouped" >
+                                    <!-- <p class="control" v-if="props.list.rating">
+                                        <b-rate :value="props.list.rating" show-score disabled/>
+                                    </p> -->
+                                    <p class="control" style="margin-left: auto">
+                                        <button class="button is-small is-success is-outlined"><b-icon size="is-small" icon="heart"/> Buy Ticket</button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </b-carousel-list>
+          </div>
+        </div>
+      </section>
+
+</template>
+
+<script>
+export default {
+    name: 'Featured',
+    data() {
+        return {
+            test: 0,
+            items: [
+                {
+                    title: 'Slide 1',
+                    image: 'https://cdn.digitaldjtips.com/app/uploads/2011/09/09145749/Dubstep-party.jpg',
+                    rating: 4.4
+                },
+                {
+                    title: 'Slide 2',
+                    image: 'https://4.imimg.com/data4/SA/XE/ANDROID-31839451/product-500x500.jpeg',
+                    rating: 3.5
+                },
+                {
+                    title: 'Slide 3',
+                    image: 'https://static.wixstatic.com/media/1ea930411416403eac0389d2397c7441.jpg/v1/fill/w_640,h_600,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01/1ea930411416403eac0389d2397c7441.webp',
+                    rating: 5
+                },
+                {
+                    title: 'Slide 4',
+                    image: 'https://babajicaterers.com/wp-content/uploads/2016/11/3-640x409.jpg'
+                },
+                {
+                    title: 'Slide 5',
+                    image: 'https://static.wixstatic.com/media/1ea930411416403eac0389d2397c7441.jpg/v1/fill/w_640,h_600,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01/1ea930411416403eac0389d2397c7441.webp',
+                    rating: 5
+                },
+                {
+                    title: 'Slide 6',
+                    image: 'https://buefy.org/static/img/placeholder-1280x960.png',
+                    rating: 4
+                },
+                {
+                    title: 'Slide 7',
+                    image: 'https://buefy.org/static/img/placeholder-1280x960.png',
+                    rating: 2.7
+                },
+                {
+                    title: 'Slide 8',
+                    image: 'https://static.wixstatic.com/media/1ea930411416403eac0389d2397c7441.jpg/v1/fill/w_640,h_600,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01/1ea930411416403eac0389d2397c7441.webp',
+                    rating: 1.5
+                }
+            ]
+        }
+    },
+    methods: {
+        info(value) {
+            this.test = value
+        }
+    }
+}
+</script>
+
+<style lang="scss">
+.bg-img {
+      background-image: url(../assets/img/bg.jpg) ;
+      background-position: center center;
+      background-repeat:  no-repeat;
+      background-attachment: fixed;
+      background-size:  cover;
+      background-color: hsl(0, 0%, 86%);
+
+}
+.img-responsive {
+      display: block;
+      max-width: 100%;
+      height: auto;
+   }
+</style>
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ghost Style Blog - Free Bulma template</title>
+    <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/ghost-blog.css">
+  </head>
+
+  <section class="hero is-medium">
+    <div class="hero-head">
+      <div class="container">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item is-active">
+                Home
+              </a>
+              <a class="navbar-item">
+                Blog Posts
+              </a>
+            </div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <a href="#">
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fas fa-rss-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <img src="https://cdn.emk.dev/templates/bulma-logo-light.png" width="150" height="40">
+        <h2 class="subtitle">
+          Ghost's Casper theme made with Bulma
+        </h2>
+      </div>
+    </div>
+  </section>
+  <section class="blog-posts">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-10 is-offset-1">
+          <div class="columns featured-post is-multiline">
+            <div class="column is-12 post">
+              <article class="columns featured">
+                <div class="column is-7 post-img ">
+                  <img src="https://cdn.emk.dev/templates/featured-image.png" alt="">
+                </div>
+                <div class="column is-5 featured-content va">
+                  <div>
+                    <h3 class="heading post-category">Category Name</h3>
+                    <h1 class="title post-title">Blog Posts Template</h1>
+                    <p class="post-excerpt">This template is based off of the official default blog template created by the fine folks over at <a href="https://ghost.io">Ghost</a>. If you are looking for a fully featured blog platform, I highly recommend checking them out!</p>
+                    <br>
+                    <a href="#" class="button is-primary">Read More</a>
+                  </div>
+
+                </div>
+              </article>
+            </div>
+          </div>
+          <hr>
+          <div class="columns is-multiline">
+            <div class="column post is-6">
+              <article class="columns is-multiline">
+                <div class="column is-12 post-img">
+                  <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                </div>
+                <div class="column is-12 featured-content ">
+                  <h3 class="heading post-category">Category Name</h3>
+                  <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                  <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+                  <br>
+                  <a href="#" class="button is-primary">Read More</a>
+                </div>
+              </article>
+            </div>
+            <div class="column post is-6">
+              <article class="columns is-multiline">
+                <div class="column is-12 post-img">
+                  <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                </div>
+                <div class="column is-12 featured-content ">
+                  <h3 class="heading post-category">Category Name</h3>
+                  <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                  <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+                  <br>
+                  <a href="#" class="button is-primary">Read More</a>
+                </div>
+              </article>
+            </div>
+            <div class="column post is-4">
+              <article class="columns is-multiline">
+                <div class="column is-12 post-img">
+                  <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                </div>
+                <div class="column is-12 featured-content ">
+                  <h3 class="heading post-category">Category Name</h3>
+                  <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                  <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+                  <br>
+                  <a href="#" class="button is-primary">Read More</a>
+                </div>
+              </article>
+            </div>
+            <div class="column post is-4">
+              <article class="columns is-multiline">
+                <div class="column is-12 post-img">
+                  <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                </div>
+                <div class="column is-12 featured-content ">
+                  <h3 class="heading post-category">Category Name</h3>
+                  <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                  <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+                  <br>
+                  <a href="#" class="button is-primary">Read More</a>
+                </div>
+              </article>
+            </div>
+            <div class="column post is-4">
+              <article class="columns is-multiline">
+                <div class="column is-12 post-img">
+                  <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                </div>
+                <div class="column is-12 featured-content ">
+                  <h3 class="heading post-category">Category Name</h3>
+                  <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                  <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+                  <br>
+                  <a href="#" class="button is-primary">Read More</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </section>
+
+
+
+
+
+
+
+<header class="showcase">
+			<div class="showcase-top">
+				<img src="https://i.ibb.co/r5krrdz/logo.png" alt="" />
+				<a href="#" class="btn btn-rounded">Sign In</a>
+			</div>
+			<div class="showcase-content">
+				<h1>See what's next</h1>
+				<p>Watch anywhere. Cancel Anytime</p>
+				<a href="#" class="btn btn-xl"
+					>Watch Free For 30 Days <i class="fas fa-chevron-right btn-icon"></i
+				></a>
+			</div>
+	</header>
+		<section class="tabs">
+			<div class="container">
+				<div id="tab-1" class="tab-item tab-border">
+					<i class="fas fa-door-open fa-3x"></i>
+					<p class="hide-sm">Cancel at any time</p>
+				</div>
+				<div id="tab-2" class="tab-item">
+					<i class="fas fa-tablet-alt fa-3x"></i>
+					<p class="hide-sm">Watch anywhere</p>
+				</div>
+				<div id="tab-3" class="tab-item">
+					<i class="fas fa-tags fa-3x"></i>
+					<p class="hide-sm">Pick your price</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="tab-content">
+			<div class="container">
+				<!-- Tab Content 1 -->
+				<div id="tab-1-content" class="tab-content-item show">
+					<div class="tab-1-content-inner">
+						<div>
+							<p class="text-lg">
+								If you decide Netflix isn't for you - no problem. No commitment.
+								Cancel online anytime.
+							</p>
+							<a href="#" class="btn btn-lg">Watch Free For 30 Days</a>
+						</div>
+						<img src="https://i.ibb.co/J2xDJV7/tab-content-1.png" alt="" />
+					</div>
+				</div>
+
+				<!-- Tab Content 2 -->
+				<div id="tab-2-content" class="tab-content-item">
+					<div class="tab-2-content-top">
+						<p class="text-lg">
+							Watch TV shows and movies anytime, anywhere — personalized for
+							you.
+						</p>
+						<a href="#" class="btn btn-lg">Watch Free For 30 Days</a>
+					</div>
+					<div class="tab-2-content-bottom">
+						<div>
+							<img src="https://i.ibb.co/DpdN7Gn/tab-content-2-1.png" alt="" />
+							<p class="text-md">
+								Watch on your TV
+							</p>
+							<p class="text-dark">
+								Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray
+								players and more.
+							</p>
+						</div>
+						<div>
+							<img src="https://i.ibb.co/R3r1SPX/tab-content-2-2.png" alt="" />
+							<p class="text-md">
+								Watch instantly or download for later
+							</p>
+							<p class="text-dark">
+								Available on phone and tablet, wherever you go.
+							</p>
+						</div>
+						<div>
+							<img src="https://i.ibb.co/gDhnwWn/tab-content-2-3.png" alt="" />
+							<p class="text-md">
+								Use any computer
+							</p>
+							<p class="text-dark">
+								Watch right on Netflix.com.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tab Content 3 -->
+				<div id="tab-3-content" class="tab-content-item">
+					<div class="text-center">
+						<p class="text-lg">
+							Choose one plan and watch everything on Netflix.
+						</p>
+						<a href="#" class="btn btn-lg">Watch Free For 30 Days</a>
+					</div>
+
+					<table class="table">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Basic</th>
+								<th>Standard</th>
+								<th>Premium</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Monthly price after free month ends on 6/19/19</td>
+								<td>$8.99</td>
+								<td>$12.99</td>
+								<td>$15.99</td>
+							</tr>
+							<tr>
+								<td>HD Available</td>
+								<td><i class="fas fa-times"></i></td>
+								<td><i class="fas fa-check"></i></td>
+								<td><i class="fas fa-check"></i></td>
+							</tr>
+							<tr>
+								<td>Ultra HD Available</td>
+								<td><i class="fas fa-times"></i></td>
+								<td><i class="fas fa-times"></i></td>
+								<td><i class="fas fa-check"></i></td>
+							</tr>
+							<tr>
+								<td>Screens you can watch on at the same time</td>
+								<td>1</td>
+								<td>2</td>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>Watch on your laptop, TV, phone and tablet</td>
+								<td><i class="fas fa-check"></i></td>
+								<td><i class="fas fa-check"></i></td>
+								<td><i class="fas fa-check"></i></td>
+							</tr>
+							<tr>
+								<td>Unlimited movies and TV shows</td>
+								<td><i class="fas fa-check"></i></td>
+								<td><i class="fas fa-check"></i></td>
+								<td><i class="fas fa-check"></i></td>
+							</tr>
+							<tr>
+								<td>Cancel anytime</td>
+								<td><i class="fas fa-check"></i></td>
+								<td><i class="fas fa-check"></i></td>
+								<td><i class="fas fa-check"></i></td>
+							</tr>
+							<tr>
+								<td>First month free</td>
+								<td><i class="fas fa-check"></i></td>
+								<td><i class="fas fa-check"></i></td>
+								<td><i class="fas fa-check"></i></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<p>Questions? Call 1-866-579-7172</p>
+			<div class="footer-cols">
+				<ul>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">Investor Relations</a></li>
+					<li><a href="#">Ways To Watch</a></li>
+					<li><a href="#">Corporate Information</a></li>
+					<li><a href="#">Netflix Originals</a></li>
+				</ul>
+				<ul>
+					<li><a href="#">Help Center</a></li>
+					<li><a href="#">Jobs</a></li>
+					<li><a href="#">Terms Of Use</a></li>
+					<li><a href="#">Contact Us</a></li>
+				</ul>
+				<ul>
+					<li><a href="#">Account</a></li>
+					<li><a href="#">Redeem Gift Cards</a></li>
+					<li><a href="#">Privacy</a></li>
+					<li><a href="#">Speed Test</a></li>
+				</ul>
+				<ul>
+					<li><a href="#">Media Center</a></li>
+					<li><a href="#">Buy Gift Cards</a></li>
+					<li><a href="#">Cookie Preferences</a></li>
+					<li><a href="#">Legal Notices</a></li>
+				</ul>
+			</div>
+
+		</footer>
